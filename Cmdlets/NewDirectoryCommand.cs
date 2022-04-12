@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Management.Automation;
 using System.IO;
-using static System.IO.Path;
 
 namespace Utilities.Cmdlets
 {

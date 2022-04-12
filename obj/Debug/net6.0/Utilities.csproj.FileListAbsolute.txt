@@ -1,0 +1,5 @@
+C:\Dhruv\Code\.NET\Utilities\obj\Debug\net6.0\Utilities.csproj.AssemblyReference.cache
+C:\Dhruv\Code\.NET\Utilities\obj\Debug\net6.0\Utilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dhruv\Code\.NET\Utilities\obj\Debug\net6.0\Utilities.AssemblyInfoInputs.cache
+C:\Dhruv\Code\.NET\Utilities\obj\Debug\net6.0\Utilities.AssemblyInfo.cs
+C:\Dhruv\Code\.NET\Utilities\obj\Debug\net6.0\Utilities.csproj.CoreCompileInputs.cache
