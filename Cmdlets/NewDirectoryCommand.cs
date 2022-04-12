@@ -6,26 +6,35 @@ using System.Threading.Tasks;
 using System.Management.Automation;
 using Utilities.Files;
 using System.IO;
+using static System.IO.Path;
 
 namespace Utilities.Cmdlets
 {
     public class NewDirectoryCommand : PSCmdlet
     {
+        /// <summary>
+        /// The name of the directory.
+        /// </summary>
         [Parameter(Position = 0,
             Mandatory = true,
             ValueFromPipeline = true,
-            HelpMessage = "The name of the directory")]
+            HelpMessage = "The name of the directory.")]
         public string Name { get; set; }
 
+        /// <summary>
+        /// The path to the directory.
+        /// </summary>
         [Parameter(Position = 0,
             Mandatory = false,
             ValueFromPipeline = true,
-            HelpMessage = "The path to the directory")]
-        public string Path { get; set; }
+            HelpMessage = "The path to the directory.")]
+        // For PowerShell users, Directory.GetCurrentDirectory() returns the same thing as $pwd.Path
+        public string Path { get; set; } = Directory.GetCurrentDirectory();
 
         protected override void ProcessRecord()
         {
-            string path = System.IO.Path.Combine(this.Path, this.Name);
+            string path = Combine(this.Path, this.Name);
+            DirectoryUtilities.CreateDirectorySafe(path);
         }
     }
 }
