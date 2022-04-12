@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Management.Automation;
-using Utilities.Files;
 using System.IO;
 using static System.IO.Path;
 
@@ -24,17 +23,18 @@ namespace Utilities.Cmdlets
         /// <summary>
         /// The path to the directory.
         /// </summary>
+        [Alias("Path")]
         [Parameter(Position = 0,
             Mandatory = false,
             ValueFromPipeline = true,
             HelpMessage = "The path to the directory.")]
         // For PowerShell users, Directory.GetCurrentDirectory() returns the same thing as $pwd.Path
-        public string Path { get; set; } = Directory.GetCurrentDirectory();
+        public string CreationPath { get; set; } = Directory.GetCurrentDirectory();
 
         protected override void ProcessRecord()
         {
-            string path = Combine(this.Path, this.Name);
-            DirectoryUtilities.CreateDirectorySafe(path);
+            string path = Path.Combine(this.CreationPath, this.Name);
+            Directory.CreateDirectory(path);
         }
     }
 }
