@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="art\" />
     <Folder Include="Attributes\" />
     <Folder Include="Files\" />
   </ItemGroup>
