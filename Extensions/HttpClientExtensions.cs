@@ -11,7 +11,7 @@ namespace Utilities.Extensions
 {
     public static class HttpClientExtensions
     {
-        public static string Get(this HttpClient httpClient, Uri requestUri)
+        public static string GetString(this HttpClient httpClient, Uri requestUri)
         {
             return httpClient.GetStringAsync(requestUri).Result;
         }
