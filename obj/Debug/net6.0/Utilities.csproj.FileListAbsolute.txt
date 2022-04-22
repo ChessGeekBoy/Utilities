@@ -3,3 +3,10 @@ C:\Dhruv\Code\.NET\Utilities\obj\Debug\net6.0\Utilities.GeneratedMSBuildEditorCo
 C:\Dhruv\Code\.NET\Utilities\obj\Debug\net6.0\Utilities.AssemblyInfoInputs.cache
 C:\Dhruv\Code\.NET\Utilities\obj\Debug\net6.0\Utilities.AssemblyInfo.cs
 C:\Dhruv\Code\.NET\Utilities\obj\Debug\net6.0\Utilities.csproj.CoreCompileInputs.cache
+C:\Dhruv\Code\.NET\Utilities\bin\Debug\net6.0\Utilities.deps.json
+C:\Dhruv\Code\.NET\Utilities\bin\Debug\net6.0\Utilities.dll
+C:\Dhruv\Code\.NET\Utilities\bin\Debug\net6.0\ref\Utilities.dll
+C:\Dhruv\Code\.NET\Utilities\bin\Debug\net6.0\Utilities.pdb
+C:\Dhruv\Code\.NET\Utilities\obj\Debug\net6.0\Utilities.dll
+C:\Dhruv\Code\.NET\Utilities\obj\Debug\net6.0\ref\Utilities.dll
+C:\Dhruv\Code\.NET\Utilities\obj\Debug\net6.0\Utilities.pdb
