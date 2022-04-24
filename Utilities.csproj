@@ -3,6 +3,14 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
+    <Description>A library of utilities for .NET Core and PowerShell Core</Description>
+    <PackageProjectUrl>https://github.com/ChessGeekBoy/Utilities</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/ChessGeekBoy/Utilities</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Utilities; PowerShell;</PackageTags>
+    <PackageReleaseNotes>This is the first release of Utilities! We hope to add more features to it in future updates. If you would like to request a feature, create an issue in our GitHub repository</PackageReleaseNotes>
+    <PackageLicenseFile>C:\Dhruv\Code\.NET\Utilities\LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +21,13 @@
 
   <ItemGroup>
     <PackageReference Include="System.Management.Automation" Version="7.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
