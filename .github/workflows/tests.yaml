@@ -1,0 +1,14 @@
+name: "Unit Tests"
+on: "pull_request"
+  label:
+    types:
+    - opened
+  branches:
+    - main
+
+jobs:
+  run_powershell_tests:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Runs the PowerShell Unit Tests in the tests/ directory"
+      run: "testRunner.ps1"

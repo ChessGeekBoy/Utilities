@@ -20,11 +20,16 @@ namespace Utilities.Cmdlets.IO
             Mandatory = false,
             ValueFromPipeline = true,
             HelpMessage = "The path to the directory.")]
-        // For PowerShell users, Directory.GetCurrentDirectory() returns the same thing as $pwd.Path
-        public string LiteralPath { get; set; } = Directory.GetCurrentDirectory();
+        // For PowerShell users, this.SessionState.Path returns the same thing as $pwd.Path
+        public string LiteralPath { get; set; }
 
         protected override void ProcessRecord()
         {
+            if (this.LiteralPath == ".")
+            {
+                this.LiteralPath = this.SessionState.Path.CurrentFileSystemLocation.Path;
+            }
+            
             string path = Path.Combine(LiteralPath, Name);
             Directory.CreateDirectory(path);
         }
