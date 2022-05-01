@@ -3,6 +3,7 @@ using System.IO;
 
 namespace Utilities.Cmdlets.IO
 {
+    [Cmdlet(VerbsCommon.New, "Directory",  HelpUri = "https://www.github.com/ChessGeekBoy/Utilities/blob/main/docs/Cmdlets/Invoke-RestMethodAsync.md")]
     public class NewDirectoryCommand : PSCmdlet
     {
         [Parameter(Position = 0,
