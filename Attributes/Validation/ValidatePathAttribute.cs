@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Management.Automation;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace Utilities.Attributes.Validation
 {
@@ -15,12 +10,22 @@ namespace Utilities.Attributes.Validation
         /// <summary>
         /// The property to be validated.
         /// </summary>
-        [ValidatePattern(@"^(.+(\\|/))+")]
         public PropertyInfo PositionalProperty { get; set; }
 
         public ValidatePathAttribute(PropertyInfo positionalProperty)
         {
             this.PositionalProperty = positionalProperty;
+            Regex pathPattern = new Regex(@"^(.+(\\|/))+$");
+            string input = this.PositionalProperty.GetConstantValue().ToString();
+
+            switch (pathPattern.IsMatch(input))
+            {
+                case true:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(this.PositionalProperty.Name, $"{this.PositionalProperty.Name} is not a valid path.");
+                    break;
+            }
         }
 
     }
