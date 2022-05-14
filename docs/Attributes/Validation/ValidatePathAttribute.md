@@ -11,19 +11,30 @@ The property upon which the validation should be enacted.
 ### C#
 Here is an example in C#:
 ```csharp
-public class Example
+using System.Management.Automation;
+using System.IO;
+using System.Text.RegularExpressions;
+
+namespace ExampleNamespace
 {
-    [ValidatePath]
-    public string DataPath { get; set; }
+    [Cmdlet(VerbsCommon.Get, "RegexMatch")]
+    public class Example : PSCmdlet
+    {
+        [ValidatePath]
+        [Parameter(Position = 0, Mandatory = true)]
+        public string LiteralPath { get; set; }
+
+        [Parameter(Position = 1, Mandatory = true)]
+        public string Pattern { get; set; }
+
+        public override void ProcessRecord()
+        {
+            string content = File.ReadAllText(this.LiteralPath);
+            Regex regex = new Regex(this.Pattern);
+            WriteObject(regex.IsMatch(content));
+        }
+    }
 }
-```
-
-### F#
-Here is an example in F#:
-```fsharp
-type GetRegexMatchCommand(filePath: string) =
-    [<ValidatePath>]
-
 ```
 
 ### PowerShell
@@ -36,7 +47,11 @@ function Get-RegexMatch
         [Paremeter(Position = 0, Mandatory = $true)]
         [ValidatePath]
         [string] $filePath
+        [Parameter(Position = 1, Mandatory = $true)]
+        [string] $regex
     )
+    [System.Text.RegularExpressions.Regex] $regexPattern = [System.Text.RegularExpressions.Regex]::new($regex)
+    Write-Output -InputObject $regexPattern.IsMatch((Get-Content -LiteralPath $filePath))
 }
 ```
 

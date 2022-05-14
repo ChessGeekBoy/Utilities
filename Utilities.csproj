@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -10,7 +10,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>Utilities; PowerShell;</PackageTags>
     <PackageReleaseNotes>This is the first release of Utilities! We hope to add more features to it in future updates. If you would like to request a feature, create an issue in our GitHub repository</PackageReleaseNotes>
-    <PackageLicenseFile>C:\Dhruv\Code\.NET\Utilities\LICENSE</PackageLicenseFile>
+    <PackageLicenseFile>https://www.github.com/ChessGeekBoy/Utilities/blob/main/LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
