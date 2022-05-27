@@ -1,14 +1,21 @@
 name: "Unit Tests"
-on: "pull_request"
-  label:
-    types:
-    - opened
-  branches:
-    - main
+on: 
+  pull_request:
+      label: "pullrequest"
+      types:
+      - opened
+    branches:
+      - main
 
 jobs:
-  run_powershell_tests:
+  test:
+    name: "test"
     runs-on: "windows-latest"
     steps:
       - name: "Runs the PowerShell Unit Tests in the tests/ directory"
-      run: ".\testRunner.ps1"
+      - run: "../testRunner.ps1"
+  build:
+    name: "build"
+    runs-on: "windows-latest"
+    steps:
+      - 
