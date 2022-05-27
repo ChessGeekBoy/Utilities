@@ -28,4 +28,10 @@ jobs:
       # Runs testrunner.ps1, idk why we can't just do testes here.
       - name: Unit Tests
         run: |
-          .\testrunner.ps1
+          [string] $testsPath = "$PSScriptRoot/../../../tests" 
+          [string[]] $testFileNames = (Get-ChildItem -Path $testsPath -Force -Filter "*.ps1").Name
+
+          foreach ($testFileName in $testFileNames) {
+            [string] $testFilePath = Join-Path -Path $testsPath $testFileNames
+            Start-Job -FilePath $testFilePath
+          }
