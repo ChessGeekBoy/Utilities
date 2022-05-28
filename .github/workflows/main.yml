@@ -28,7 +28,7 @@ jobs:
       # Runs testrunner.ps1, idk why we can't just do testes here.
       - name: Unit Tests
         run: |
-          [string] $rootPath = "D:\a\Utilities\Utilities\"
+          [string] $rootPath = "D:\a\ChessGeekBoy\Utilities\"
           [string] $testsPath = "D:\a\Utilities\Utilities\Tests\" 
           [string[]] $testFileNames = (Get-ChildItem -Path $testsPath -Force -Filter "*.ps1").Name
 
