@@ -28,8 +28,8 @@ jobs:
       # Runs testrunner.ps1, idk why we can't just do testes here.
       - name: Unit Tests
         run: |
-          [string] $rootPath = "D:\a\ChessGeekBoy\Utilities\"
-          [string] $testsPath = "D:\a\Utilities\Utilities\Tests\" 
+          [string] $rootPath = ${{ github.action_path }}
+          [string] $testsPath = "${{ github.action_path }}\Tests\" 
           [string[]] $testFileNames = (Get-ChildItem -Path $testsPath -Force -Filter "*.ps1").Name
 
           foreach ($testFileName in $testFileNames) {
