@@ -28,7 +28,8 @@ jobs:
       # Runs testrunner.ps1, idk why we can't just do testes here.
       - name: Unit Tests
         run: |
-          [string] $testsPath = "$PSScriptRoot/../../../tests" 
+          [string] $rootPath = ${{ github.action_path }}
+          [string] $testsPath = "${{ github.action_path }}\Tests\" 
           [string[]] $testFileNames = (Get-ChildItem -Path $testsPath -Force -Filter "*.ps1").Name
 
           foreach ($testFileName in $testFileNames) {
