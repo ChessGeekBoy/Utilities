@@ -10,14 +10,7 @@ namespace Utilities.Math
     {
         public static decimal GetMean(in IEnumerable<decimal> values)
         {
-            decimal sum = 0;
-
-            foreach (decimal result in values)
-            {
-                sum += result;
-            }
-
-            return sum / values.Count();
+            return values.Sum() / values.Count();
         }
 
         //public static decimal GetMode(IEnumerable<decimal> values)
