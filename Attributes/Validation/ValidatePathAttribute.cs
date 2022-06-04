@@ -15,10 +15,11 @@ namespace Utilities.Attributes.Validation
         public ValidatePathAttribute(PropertyInfo positionalProperty)
         {
             this.PositionalProperty = positionalProperty;
-            Regex pathPattern = new Regex(@"^(.+(\\|/))+$");
+            Regex pathPattern1 = new Regex(@"^(.+(\\|/))+$");
+            Regex pathPattern2 = new Regex(^(([a-zA-Z]:|\\)\\)?(((\.)|(\.\.)|([^\\\/:\*\?"\|<>\. ](([^\\\/:\*\?"\|<>\. ])|([^\\\/:\*\?"\|<>]*[^\\\/:\*\?"\|<>\. ]))?))\\)*[^\\\/:\*\?"\|<>\. ](([^\\\/:\*\?"\|<>\. ])|([^\\\/:\*\?"\|<>]*[^\\\/:\*\?"\|<>\. ]))?$));
             string input = this.PositionalProperty.GetConstantValue().ToString();
 
-            switch (pathPattern.IsMatch(input))
+            switch (pathPattern1.IsMatch(input) || pathPattern2.IsMatch(input))
             {
                 case true:
                     break;
