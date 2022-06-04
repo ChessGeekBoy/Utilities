@@ -16,7 +16,7 @@ namespace Utilities.Attributes.Validation
         {
             this.PositionalProperty = positionalProperty;
             Regex pathPattern1 = new Regex(@"^(.+(\\|/))+$");
-            Regex pathPattern2 = new Regex("^(([a-zA-Z]:|\\)\\)?(((\.)|(\.\.)|([^\\\/:\*\?\"\|<>\. ](([^\\\/:\*\?\"\|<>\. ])|([^\\\/:\*\?\"\|<>]*[^\\\/:\*\?\"\|<>\. ]))?))\\)*[^\\\/:\*\?\"\|<>\. ](([^\\\/:\*\?\"\|<>\. ])|([^\\\/:\*\?\"\|<>]*[^\\\/:\*\?\"\|<>\. ]))?$)");
+            Regex pathPattern2 = new Regex(^(([a-zA-Z]:|\\)\\)?(((\.)|(\.\.)|([^\\\/:\*\?"\|<>\. ](([^\\\/:\*\?"\|<>\. ])|([^\\\/:\*\?"\|<>]*[^\\\/:\*\?"\|<>\. ]))?))\\)*[^\\\/:\*\?"\|<>\. ](([^\\\/:\*\?"\|<>\. ])|([^\\\/:\*\?"\|<>]*[^\\\/:\*\?"\|<>\. ]))?$);
             string input = this.PositionalProperty.GetConstantValue().ToString();
 
             switch (pathPattern1.IsMatch(input) || pathPattern2.IsMatch(input))
